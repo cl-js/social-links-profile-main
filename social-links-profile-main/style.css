@@ -1,0 +1,143 @@
+/* ==========================================
+   1. DESIGN SYSTEM TOKENS & VARIABLES
+   ========================================== */
+:root {
+  /* Style Guide Colors */
+  --clr-green: hsl(75, 94%, 57%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-grey-700: hsl(0, 0%, 20%);
+  --clr-grey-800: hsl(0, 0%, 12%);
+  --clr-grey-900: hsl(0, 0%, 8%);
+
+  /* Typography Design Scale */
+  --ff-sans: 'Inter', sans-serif, system-ui;
+  --fs-body: 14px;
+}
+
+/* ==========================================
+   2. GLOBAL RESET
+   ========================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ==========================================
+   3. LAYOUT SPECIFICATION
+   ========================================== */
+body {
+  background-color: var(--clr-grey-900);
+  font-family: var(--ff-sans);
+  font-size: var(--fs-body);
+  color: var(--clr-white);
+  
+  /* Precision Viewport Centering Matrix */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+/* ==========================================
+   4. CARD COMPONENT
+   ========================================== */
+.profile-card {
+  background-color: var(--clr-grey-800);
+  text-align: center;
+  padding: 24px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 384px; /* Perfectly snaps between mobile 375px and desktop scales */
+}
+
+@media (min-width: 480px) {
+  .profile-card {
+    padding: 40px; /* internal whitespace padding for desktop layouts */
+  }
+}
+
+/* Header & Meta Typography */
+.profile-header {
+  margin-bottom: 24px;
+}
+
+.profile-avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 24px;
+}
+
+.profile-name {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.profile-location {
+  color: var(--clr-green);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.profile-bio {
+  font-weight: 400;
+  color: hsl(0, 0%, 80%);
+  margin-bottom: 24px;
+}
+
+/* Interactive Navigation Sub-System */
+.links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Strict structural row layout gap spacing rules */
+}
+
+.social-link {
+  display: block;
+  background-color: var(--clr-grey-700);
+  color: var(--clr-white);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 14px 0;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Interactive States */
+.social-link:hover,
+.social-link:focus-visible {
+  background-color: var(--clr-green);
+  color: var(--clr-grey-900);
+  outline: none;
+}
+
+/* ==========================================
+   5. UTILITY & ATTRIBUTION FOOTER
+   ========================================== */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 24px;
+  color: hsl(0, 0%, 50%);
+}
+
+.attribution a {
+  color: var(--clr-green);
+  text-decoration: none;
+  transition: text-decoration 0.2s ease;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
